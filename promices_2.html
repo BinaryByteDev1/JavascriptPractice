@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Call_Backs in Javascript</title>
+    <style>
+     
+    </style>
+</head>
+<body>
+
+    <script>
+
+            // Promises and Promices
+            // Promises and Promices 
+
+      
+
+
+           function regester() {
+                return new Promise((resolve , reject) =>{
+                    setTimeout(() => {
+                    return reject("Server 404 Error!!!");
+                         console.log("Regester End...");
+                }, 2000);
+            });
+         }
+
+
+
+
+
+                //wel come email.
+            function send_welcome_email() {
+                return new Promise((resolve , reject) =>{
+
+                    setTimeout(() => {
+                        console.log("sending wel come email...");
+
+                        resolve();
+                    }, 3000);
+
+                })
+                
+         
+        }
+
+                    //login .
+            function login() {
+
+                return new Promise((resolve , reject) =>{
+                    setTimeout(() => {
+                        console.log("login successful...");
+
+                        resolve();
+                    }, 1000);
+                })
+ 
+        
+        }
+
+
+                        // User Data 
+            function get_User_data() {
+                return new Promise((resolve , reject) =>{
+
+                    setTimeout(() => {
+                        console.log("got User Data");
+
+                        resolve();
+                    }, 3000);
+                })
+        }
+
+
+                    // 
+            function display_user_data() {
+                return new Promise((resolve , reject) =>{
+
+                    setTimeout(() => {
+                        console.log("Display UseR Data..."); 
+
+                        resolve();
+                    }, 2000); 
+                })
+            }
+
+
+            function massage(){
+
+                return new Promise((resolve , reject) =>{
+
+                    setTimeout(() => {
+                    console.log("Application are Properly Working...")
+                        
+                        resolve();
+                }, 2000);
+                })
+                
+            }
+
+           regester()
+                .then(send_welcome_email)
+                .then(login)
+                .then(get_User_data)
+                .then(display_user_data)
+                .then(massage)
+                .catch((Error) =>{
+                    console.log(Error);
+                });
+        
+                
+            
+
+
+
+
+
+
+    </script>
+    
+</body>
+</html>

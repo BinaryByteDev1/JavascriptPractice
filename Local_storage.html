@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Local Storage in Javascript</title>
+    <style>
+   
+
+    </style>
+</head>
+<body>
+
+    
+  
+    
+    <form id="submitted">
+        <label>Name :- </label>
+        <input type="text" id="full_name" required><br><br>
+        <label>Email :- </label>
+        <input type="email" id="email" required><br><br>
+        <label>Password :- </label>
+        <input type="password" id="password" required><br><br>
+        <label>Gender</label>
+        <input type="radio" name="gender" id="gender" required>Male
+        <input type="radio" name="gender" required>Female
+        <br><br>
+        <input type="submit" id="submit_btn">
+
+        
+    </form>
+
+    <script>
+
+        // function myfunction(event) {
+        //     event.preventDefault();
+
+            let submit = document.getElementById("submitted");
+            submit.addEventListener("submit" , (e) =>{
+                e.preventDefault();
+                let name = document.getElementById("full_name");
+            let email = document.getElementById("email");
+            let password = document.getElementById("password");
+            let gender = document.getElementById("gender");
+
+            if(gender.checked){
+                gender = "Male";
+            }
+            else{
+                gender = "Female";
+            }
+
+            localStorage.setItem("Name" , name.value);
+            localStorage.setItem("Email" , email.value);
+            localStorage.setItem("Password" , password.value);
+            localStorage.setItem("Gender" , gender.value);
+
+        })
+
+    
+
+
+        
+        
+    </script>
+    
+</body>
+</html>

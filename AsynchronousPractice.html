@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Asynchronous</title>
+</head>
+<body>
+
+    <script>
+
+
+            //  CallBacks
+            //  CallBacks
+
+        // function morning(callback) {
+           
+        //     setTimeout(()=>{
+        //         console.log("Good Morning...");
+        //         callback();
+        //     },1000);
+        // }
+
+        // function afternoon(callback) {
+
+        //     setTimeout(()=>{
+        //         console.log("Good AfterNoon...")
+        //         callback();
+        //     },3000);
+        // }
+
+        // function evening(callback) {
+
+        //     setTimeout(()=>{
+        //         console.log("Good Evening...");
+        //         callback();
+
+        //     },4000);
+
+        // }
+
+        // function goodNight(callback) {
+        //     setTimeout(() => {
+        //         console.log("Good Night...");
+        //         callback();
+        //     }, 1000);
+        // }
+
+
+
+
+        // morning(()=>{
+        //     afternoon(()=>{
+        //         evening(()=>{
+        //             goodNight(function(){
+        //                 console.log("Hello World...");
+        //             });
+        //         });
+        //     });
+        // });
+
+
+
+
+
+            // Promises
+            // Promises
+        
+
+        // function morning() {
+        //     return new Promise((resolve , reject)=>{
+        //         setTimeout(() => {
+        //         console.log("Good Morning...");
+        //         reject("Server Erroe");
+        //         }, 2000);
+        //     })
+         
+            
+        // }
+        
+        // function afterNoon() {
+        //     return new Promise((resolve , reject)=>{
+
+        //         setTimeout(() => {
+        //             console.log("Good AfterNoon...");
+        //             resolve();
+        //         }, 3000);
+        //     })
+          
+        // }
+
+        // function evening() {
+        //     return new Promise((resolve , reject)=>{
+        //         setTimeout(() => {
+        //             console.log("Good Evening..."); 
+        //             resolve();
+        //         }, 4000);
+        //     })
+       
+        // }
+
+        // function goodNight() {
+        //     return new Promise((resolve , reject)=>{
+        //         setTimeout(() => {
+        //             console.log("Good Night...");
+        //             resolve();
+        //         }, 2000);
+        //     })
+            
+        // }
+        // function sleep() {
+        //     return new Promise((resolve , reject)=>{
+        //         setTimeout(() => {
+        //             console.log("Sleeping...");
+        //             resolve();
+        //         }, 5000);
+        //     })
+          
+        // }
+
+        // morning((err)=>{
+        //     console.log(err);
+        // })
+        //     .then(afterNoon)
+        //     .then(evening)
+        //     .then(goodNight)
+        //     .then(sleep);
+
+
+
+
+
+        //     Async Await in javascript
+        //     Async Await in javascript
+
+
+        function morning(){
+            return new Promise((resolve , reject)=>{
+
+                setTimeout(() => {
+                    console.log("Good Morning...");
+                    resolve();
+                }, 2000);
+            }) 
+        }
+
+
+        function afterNoon(){
+            return new Promise((resolve , reject)=>{
+
+                setTimeout(() => {
+                    return reject("Server 404 Error.");
+                    console.log("Good Afternoon...");
+                }, 3000);
+            })
+            
+        }
+
+        
+        function evening(){
+            return new Promise((resolve , reject)=>{
+
+                setTimeout(() => {
+                    console.log("Good Evening...");
+                    resolve();
+                }, 2000);
+            })
+        }
+
+
+        
+        function goodNight(){
+            return new Promise((resolve , reject)=>{
+
+                setTimeout(() => {
+                    console.log("Good Night...");
+                    resolve();
+                }, 1000);
+            }) 
+        }
+
+
+
+        //    async function authonticate() {
+        //         await morning();
+        //         await afterNoon();
+        //         await evening();
+        //         await goodNight();
+        //     }
+
+        //    authonticate().then((err) =>{
+        //     console.log(err);
+        //    });
+
+        //    authonticate().catch((err) => {
+        //         console.log(err);
+        //    });
+
+
+            
+           async function authonticate() {
+               try{
+                    await morning();
+                    await afterNoon();
+                    await evening();
+                    await goodNight();
+               } catch(err){
+                console.log(err);
+               }
+            }
+            authonticate();
+
+
+    
+
+
+        
+       
+
+
+
+        
+    
+    </script>
+    
+</body>
+</html>

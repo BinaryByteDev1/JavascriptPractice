@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LocalStorage</title>
+
+    <style>
+        
+        h2{
+            background-color: red;
+        }
+   
+    </style>
+</head>
+<body>
+
+    <!-- <input type="email" id="emailInputBox" placeholder="Enter Email :- "><br><br>
+    <input type="password" id="passwordInputBox" placeholder="Enter Password :- "><br><br>
+    <input type="submit" id="formSubmit"> -->
+
+
+        <!-- <textarea  id="commetTextArea" cols="50" rows="10" placeholder="Write Something..."></textarea>
+        <button id="storeBtn">Add</button>
+
+        <div id="items_box">
+
+        </div> -->
+
+
+
+        <form action="">
+            <select id="themeSelector">
+                <option value="">Select a Theme</option>
+                <option value="Dark">Dark</option>
+                <option value="Light">Light</option>
+    
+            </select>
+        </form>
+    
+
+      
+
+    <script>
+
+        const selectTheme = document.getElementById("themeSelector");
+
+        const storeTheme = localStorage.getItem("Theme");
+        changeTheme(storeTheme);
+
+        selectTheme.addEventListener("change" , (e)=>{
+
+            localStorage.setItem("Theme" , e.target.value);
+            changeTheme(e.target.value);
+        });
+
+
+        function changeTheme(themeMode){    
+            if(themeMode == "Dark"){
+                document.body.style.background = "#222";
+            }
+            else if(themeMode == "Light"){
+                document.body.style.background = "#e5e5e5";
+            }
+            else{
+                document.body.style.background = "#ffffff";
+            }
+
+          
+        }
+        
+
+        
+       
+
+
+
+        // console.log(window.localStorage);
+        // localStorage.setItem("Name" , "Hilal Ahmad Ganie");
+
+        // window.localStorage();
+
+        // localStorage.setItem('theme' , 'Dark');
+        // document.write(localStorage.getItem('theme'));
+        // console.log(localStorage.getItem('theme'))
+
+
+        // const email = document.getElementById("emailInputBox");
+        // const password = document.getElementById("passwordInputBox");
+        // const submit = document.getElementById("formSubmit");
+
+        // submit.addEventListener("click" , ()=>{
+        //     localStorage.setItem('Email' , email.value);
+        //     localStorage.setItem('Password' , password.value);
+
+        //     console.log(localStorage.getItem('Email'));
+        //     console.log(localStorage.getItem('Password'));
+
+
+        //     document.write(`<h2> Email : ${localStorage.getItem('Email')} </h2>`);
+        //     document.write(`<h2> Password : ${localStorage.getItem('Password')} </h2>`);
+
+        // });
+
+        //     let textBox = document.getElementById('commetTextArea');
+        //     let storeButton = document.getElementById('storeBtn');
+        //     const items = document.getElementById('items_box');
+        //     const store = [];
+        //     storeButton.addEventListener("click" , () => {
+        //         const fstr = localStorage.setItem('Commet' , textBox.value);
+        //         const st = localStorage.getItem(fstr.value);
+        //         store.push(st.value);
+        //     });
+
+        //     store.forEach(element => {
+        //         document.write(localStorage.getItem(element));
+        //     });
+          
+                
+
+          
+                // setItem() and getItem()
+
+        //  Local Storage in js
+        //  Secession Storage in js
+
+        // localStorage.setItem('theme' , 'Light');
+        // localStorage.setItem('font' , 'bold');
+
+        // localStorage.removeItem('font');
+
+        // let theme = localStorage.getItem('theme');
+        // console.log(theme);
+
+                //  Clear()
+        
+        // localStorage.setItem('theme' , 'Light');
+        // localStorage.setItem('font' , 'bold');
+        // localStorage.setItem('phone' , 'Android');
+
+        // localStorage.clear();
+
+          
+
+        // localStorage.setItem('theme' , 'Light');
+        // localStorage.setItem('font' , 'bold');
+        // localStorage.setItem('phone' , 'Android');
+
+
+
+                    //      Object storing
+        // const userSettings = {
+        //     theme : 'Dark',
+        //     font : 'Poppains', 
+        //     phone : 'Android',
+        //     score : '100',
+        //     phoneNo : '010101',
+        //     userName : 'Hilal Ahmad Ganie'
+        // };
+        
+        //     // localStorage.setItem('userSettings : ' , JSON.stringify(userSettings));
+
+        //     const settingStr = JSON.stringify(userSettings);
+        //     console.log(settingStr);
+        //     localStorage.setItem('userSettings' , settingStr);
+
+        //     const usetting = JSON.parse(localStorage.getItem('userSettings'));
+        //     console.log(usetting.theme);
+
+        //     for(let i in usetting){
+        //         console.log(usetting[i]);
+        //         document.write(`<li> ${usetting[i]} </li>`);
+        //     }
+
+
+        // const person = {
+        //     name : "Hilal",
+        //     address : "Kupwara",
+        //     qualification : "BCA",
+        //     skill : "Full Stack Web Developer",
+        //     company : "Google"
+        // }
+        // const storeData = JSON.stringify(person);
+        // localStorage.setItem("PersonDetails" , storeData);
+
+        // const getData = JSON.parse(localStorage.getItem("PersonDetails"));
+
+        // for(let i in getData) {
+        //     document.write(`<h2>${getData[i]}</h2>`);
+        // }
+        // document.write(getData.name);
+        // document.write(getData.address);
+        // document.write(getData.qualification);
+        // document.write(getData.skill);
+        // document.write(getData.company);
+
+
+
+           
+
+
+ 
+
+
+
+
+
+
+
+
+    </script>
+    
+</body>
+</html>

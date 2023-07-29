@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Call_Backs in Javascript</title>
+</head>
+<body>
+
+    <script>
+
+            // CallBacks
+            // CallBacks
+
+      
+
+                 //  Regester
+           function regester(callback) {
+            setTimeout(() => {
+            console.log("Regester End...");
+
+            callback();
+
+            }, 2000);
+         }
+
+                //wel come email.
+            function send_welcome_email(callback) {
+            setTimeout(() => {
+                console.log("sending wel come email...");
+
+                callback();
+            }, 7000);
+        }
+
+                    //login .
+            function login(callback) {
+ 
+            setTimeout(() => {
+                console.log("login successful...");
+                callback();
+            }, 4000);
+        }
+
+
+                        // User Data 
+            function get_User_data(callback) {
+            setTimeout(() => {
+                console.log("got User Data");
+                callback();
+            }, 3000);
+        }
+
+
+                    // 
+            function display_user_data(callback) {
+            setTimeout(() => {
+                console.log("Display UseR Data..."); 
+                callback();
+            }, 2000); 
+            }
+
+
+
+
+
+            regester(function() {
+                send_welcome_email(function() {
+                    login(function() {
+                        get_User_data(function() {
+                            display_user_data(function() {
+                                 console.log("Application Are Starting Working...");
+                            });
+                        });
+                    });
+                });
+            });
+            
+
+
+
+
+
+
+    </script>
+    
+</body>
+</html>

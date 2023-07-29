@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Theme</title>
+    <style>
+        body{
+            display: flex;
+            justify-content: flex-end;
+            height: 100vh;
+            padding: 20px;
+        }
+        #themeSelector{
+            margin-top: 6px;
+            margin-right: 20px;
+            padding: 8px;
+            border-radius: 4px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+         option{
+            font-weight: bold;
+            cursor: pointer;
+            font-size: 15px;
+
+        }
+    </style>
+</head>
+<body>
+    <form action="">
+        <select id="themeSelector">
+            <option value="">Select a Theme</option>
+            <option value="Dark">Dark</option>
+            <option value="Light">Light</option>
+
+        </select>
+    </form>
+
+    <script>
+
+        const themeSelector = document.querySelector("#themeSelector");
+
+        const storeTheme = localStorage.getItem('theme');
+        changeTheme(storeTheme);
+        
+        themeSelector.addEventListener('change' , (e)=>{
+            // console.log(e.target.value);
+
+            // if(e.target.value == "Dark"){
+            //     document.body.style.background = "#2b2929";
+            // }   
+            // else if(e.target.value == "Light"){
+            //     document.body.style.background = "#ffffff";
+                
+            // }
+
+            localStorage.setItem("theme" , e.target.value);
+            changeTheme(e.target.value);
+
+        });
+
+            function changeTheme(theme) {
+                if(theme == "Dark"){
+                    document.body.style.background = "#222";
+                }   
+                else if(theme == "Light"){
+                    document.body.style.background = "#e5e5e5";   
+            }
+            else{
+                document.body.style.background = "#fff";     
+            }
+        }
+        //  window.addEventListener('storage' , (ev) => {
+        //     changeTheme(ev.newValue);
+        //     themeSelector.value = ev.newValue;
+        //  });
+
+
+
+    </script>
+</body>
+</html>

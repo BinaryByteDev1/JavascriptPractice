@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array Destructuring</title>
+</head>
+<body>
+
+    <script>
+        // let books = ["Javascript" , "OOPS in Javascript" , 1000 , 1350 , "Hilal"];
+        // let[name , title , pages , prize , author] = books;
+
+        //     console.log(name);
+        //     console.log(title);
+        //     console.log(pages);
+        //     console.log(prize);
+        //     console.log(author);
+
+
+        // let Names = ["Hilal" , "Waseem" , "Aadil" , "Junaid" , "Gowher" , "Immu"];
+        
+        // let[name1 , name2 , name3 , name4 , name5 , name6] = Names;
+        //     console.log(name1);
+        //     console.log(name2);
+        //     console.log(name3);
+        //     console.log(name4);
+        //     console.log(name5);
+        //     console.log(name6);
+
+
+
+
+        // let books = ["Python" , "Web Developing" , "290" , "800" , "Thomes Shalby" , "2022"];
+
+        // let[bookName , Title , Pages , Prize , Author , Publish , PublishBy , date] = books;
+        // PublishBy = "Hilal";
+        // date = "05-09-2020";
+        // console.log(bookName);
+        // console.log(Pages);
+        // console.log(Prize);
+        // console.log(Author);
+        // console.log(Publish);
+        // console.log(PublishBy);
+        // console.log(date);
+
+
+
+        let data = {
+            name : "Hilal Ahmad",
+            age : "17 years",
+            qualification : "BCA",
+            collage : "GDC Kupwara", 
+
+            personalDetails : {
+                phoneNo : "9966446366",
+                Email : "hilalahmad@gmainlcom",
+                address : "Kalaroos"
+            }
+        }
+
+        let{name , age , qualification , collage , personalDetails :{phoneNo , Email , address}} = data;
+
+        console.log(name);
+        console.log(age);
+        console.log(qualification);
+        console.log(collage);
+        console.log(phoneNo);
+        console.log(Email);
+        console.log(address);
+
+
+
+        
+
+
+
+
+    </script>
+    
+</body>
+</html>
