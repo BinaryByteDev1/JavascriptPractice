@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Load Script</title>
+
+</head>
+<body>
+    
+
+    <script>
+        let src;
+        const loadScript = async (scr) =>{
+            return new Promise((resolve , reject) => {
+
+
+            let script =  document.createElement("script");
+            script.src = src;
+            script.onload = () => {
+                resolve("Done success");
+            }
+
+        })
+    }
+
+    let run = loadScript("Script loadede successfully");
+    run.then((val) => {
+        console.log(val);
+    })
+
+        // const access = async () => {
+        //      let run = await loadScript("https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js");
+        //      console.log(run);
+        // }
+
+        // access();
+
+  
+
+
+
+       
+
+    </script>
+
+
+</body>
+</html>
